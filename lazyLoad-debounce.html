@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			img, body, ul, li, html {
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				height: 700px;
+				width: 100vw;
+			}
+		</style>
+		<ul>
+			<li><img src="img/10.gif" data-src="img/1.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/2.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/3.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/4.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/5.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/6.jpg"></li>
+			<li><img src="img/10.gif" data-src="img/7.jpg"></li>
+		</ul>
+		<script src="./js/scroll-lazyload.js"></script>
+		<script>
+			let imgNodes = [...document.querySelectorAll('img')];
+			jqLoad.lazyLoad(imgNodes)
+			window.addEventListener('scroll', jqLoad.debounce(jqLoad.lazyLoad, 100, imgNodes))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
